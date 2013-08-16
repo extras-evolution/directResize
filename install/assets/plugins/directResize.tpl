@@ -5,7 +5,7 @@
  * Direct Resize
  *
  * @category 	plugin
- * @version 	0.8.2
+ * @version 	0.8.3
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @internal    @properties &config=Конфигурация;string;fancybox &clearCache=Очистка_кеша;list;0,1,2;2
  * @internal	@events OnWebPagePrerender,OnCacheUpdate,OnBeforeDocFormSave 

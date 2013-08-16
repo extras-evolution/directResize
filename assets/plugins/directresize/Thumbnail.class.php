@@ -364,8 +364,12 @@ class Thumbnail {
                 }
 
                 if (!$this->bicubic_resample) {
+                    imagealphablending($this->img["des"], false );
+                    imagesavealpha($this->img["des"], true );
                     imagecopyresampled ($this->img["des"], $this->img["src"], 0, 0, 0, 0, $X_des, $Y_des, $this->img["x"], $this->img["y"]);
                 } else {
+                    imagealphablending($this->img["des"], false );
+                    imagesavealpha($this->img["des"], true );
                     $this->imageCopyResampleBicubic($this->img["des"], $this->img["src"], 0, 0, 0, 0, $X_des, $Y_des, $this->img["x"], $this->img["y"]);
                 }
 
