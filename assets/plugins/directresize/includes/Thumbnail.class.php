@@ -404,7 +404,7 @@ class DRThumbnail {
                     $this->imageCopyResampleBicubic($this->img["des"], $this->img["src"], 0, 0, 0, 0, $X_des, $Y_des, $this->img["x"], $this->img["y"]);
                 }
 
-                if ($this->img_watermark!='' && file_exists($this->img_watermark)) {
+                if ($this->img_watermark!='' && is_file($this->img_watermark)) {
                     $this->img["watermark"]=ImageCreateFromPNG ($this->img_watermark);
                     $this->img["x_watermark"] =imagesx($this->img["watermark"]);
                     $this->img["y_watermark"] =imagesy($this->img["watermark"]);
@@ -421,7 +421,7 @@ class DRThumbnail {
                     $txt_color=imageColorAllocate($this->img["des"] ,$red, $green, $blue);
                 }
                 // pre copy image, allocating color of water mark, GD < 2 can't resample colors
-                if ($this->img_watermark!='' && file_exists($this->img_watermark)) {
+                if ($this->img_watermark!='' && is_file($this->img_watermark)) {
                     $this->img["watermark"]=ImageCreateFromPNG ($this->img_watermark);
                     $this->img["x_watermark"] =imagesx($this->img["watermark"]);
                     $this->img["y_watermark"] =imagesy($this->img["watermark"]);
@@ -689,7 +689,7 @@ class DRThumbnail {
 
     	$destination = $file_prefix."_".$name.".".$extension;
 
-    	while (file_exists($archive_dir."/".$destination)) {
+    	while (is_file($archive_dir."/".$destination)) {
     		// if exist, add a random number to the file name
     		srand((double)microtime()*1000000); // random number inizializzation
     		$destination = $file_prefix."_".$name."_".rand(0,999999999).".".$extension;
