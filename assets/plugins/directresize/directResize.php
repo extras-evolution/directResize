@@ -6,7 +6,7 @@ class directResize {
 		
 	//-------------------------------------------------------------------------------------------------
 	
-	function directResize($drconfig, $input)
+	function __construct($drconfig, $input)
 	{
 		$this->Labels = array("drlightbox", "drthumbonly", "drskip");
 		

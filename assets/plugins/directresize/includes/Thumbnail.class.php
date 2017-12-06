@@ -1,6 +1,6 @@
 <?php
 /**
-* Modified by Metaller for DirectResize plugin for MODx CMS (http://modxcms.com)
+* Modified by Metaller for DirectResize plugin for Evolution CMS (http://modx.im)
 *
 *This is a class that can process an image on the fly by either generate a thumbnail, apply an watermark to the image, or resize it.
 *
@@ -181,7 +181,7 @@ class DRThumbnail {
     *@param string filename of the source image file
     *@return boolean
     **/
-	function DRThumbnail($imgfile) 	{
+	function __construct($imgfile) 	{
     	
 		$img_info =  getimagesize( $imgfile );
         //detect image format
