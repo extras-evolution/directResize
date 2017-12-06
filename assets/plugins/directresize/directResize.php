@@ -794,6 +794,8 @@ function gif2png($name){
 
 function ConvertFromBackend($o, $escape= true)
 {
+	global $modx;
+	
 	$reg = "/<img[^>]*>/";
 	preg_match_all($reg, $o, $imgs, PREG_PATTERN_ORDER);
 	for($n=0;$n<count($imgs[0]);$n++)
